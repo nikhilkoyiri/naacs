@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>coder-app-name</title>
+    <title>NAAC Institutional Grade & Score Assessment Platform</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -49,8 +49,12 @@
               }
             }
           });
+        }
+        // Check localStorage for saved preference
+        var savedTheme = localStorage.getItem("naac_dark");
+        if (savedTheme === "true") {
+          applyThemeToDOM("dark");
         } else {
-          // 非 iframe 环境，使用默认 light 主题
           applyThemeToDOM("light");
         }
       })();
@@ -92,6 +96,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
