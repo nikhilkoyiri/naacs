@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { useData } from '../context/DataContext';
 import { CRITERIA, GRADE_BANDING } from '../data/naacConfig';
 import { Shield, CheckCircle, ArrowRight, Sparkles, BookOpen, Target, Award } from 'lucide-react';
@@ -20,8 +20,7 @@ export default function Landing() {
   };
 
   if (isAuthenticated) {
-    navigate('/dashboard');
-    return null;
+    return <Navigate to="/dashboard" replace />;
   }
 
   return (

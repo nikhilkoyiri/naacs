@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { DataProvider, useData } from './context/DataContext';
 import Layout from './components/Layout';
 import Landing from './pages/Landing';
@@ -43,8 +43,8 @@ function Toast() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <DataProvider>
+    <DataProvider>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
@@ -59,8 +59,8 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Toast />
-      </DataProvider>
-    </BrowserRouter>
+      </HashRouter>
+    </DataProvider>
   );
 }
 
